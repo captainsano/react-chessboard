@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/jest",
-    "build": "export NODE_ENV=production && node_modules/.bin/browserify -t coffee-reactify -t [ envify --NODE_ENV production ] -g uglifyify src/chessboard.cjsx --standalone Chessboard > index.js",
-    "watch": "export NODE_ENV=development && node_modules/.bin/watchify -t coffee-reactify -t [ envify --NODE_ENV development ] src/chessboard.cjsx --standalone Chessboard -o index.js --debug --verbose",
-    "prepublish": "npm build"
+    "build": "export NODE_ENV=production && node_modules/.bin/browserify --extension=.coffee --extension=.cjsx -t coffee-reactify -t [ envify --NODE_ENV production ] -g uglifyify src/chessboard.cjsx --standalone Chessboard > index.js",
+    "watch": "export NODE_ENV=development && node_modules/.bin/watchify --extension=.coffee --extension=.cjsx -t coffee-reactify -t [ envify --NODE_ENV development ] src/chessboard.cjsx --standalone Chessboard -o index.js --debug --verbose",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "url": "https://github.com/santhosbaala/react-chessboard/issues"
   },
   "dependencies": {
+    "ramda": "^0.11.0",
     "react": "~0.13.0"
   },
   "devDependencies": {
@@ -40,7 +41,21 @@
   },
   "jest": {
     "scriptPreprocessor": "jest-preprocessor.js",
-    "testFileExtensions": ["coffee", "litcoffee", "cjsx", "js"],
-    "unmockedModulePathPatterns": ["node_modules/react"]
+    "testFileExtensions": [
+      "coffee",
+      "litcoffee",
+      "cjsx",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "coffee",
+      "litcoffee",
+      "cjsx",
+      "js",
+      "json"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react"
+    ]
   }
 }
