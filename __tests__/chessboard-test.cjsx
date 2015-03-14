@@ -1,9 +1,9 @@
-jest.dontMock '../src/chessboard.cjsx'
+jest.dontMock '../src/chessboard'
 
 React = require 'react/addons'
 {TestUtils: TU} = React.addons
 
-Chessboard = require '../src/chessboard.cjsx'
+Chessboard = require '../src/chessboard'
 
 describe 'chessboard', ->
   describe 'size prop provided', ->

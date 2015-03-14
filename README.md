@@ -4,7 +4,7 @@ Component renders chessboard using svg, driven by ReactJS.
 
 ## Roadmap
 
-- Chessboard pattern
+- ~~Chessboard pattern~~
 - Coordinates
 - Board flipping (coordinate flipping)
 - Board resizing
