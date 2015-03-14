@@ -22,8 +22,11 @@ module.exports =
       squareColor = Util.colorForSquareIndex(squareIndex, @props.lightSquareColor, @props.darkSquareColor)
       squareSize = @props.size / 8
 
+      squareColorType = if @props.lightSquareColor is squareColor then 'light' else 'dark'
+
       <rect
         key={"square-#{squareIndex}"}
+        className={"#{squareColorType} base-square"}
         x={squareSize * file}
         y={squareSize * (7 - rank)}
         width={squareSize}
