@@ -1,0 +1,24 @@
+{
+  "name": "react-chessboard",
+  "version": "0.0.0",
+  "description": "Chessboard component for ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/weekendlabs/react-chessboard"
+  },
+  "keywords": [
+    "chessboard",
+    "chess",
+    "react-component",
+    "react-chessboard"
+  ],
+  "author": "Santhos Baala RS <rssanthosbaala@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weekendlabs/react-chessboard/issues"
+  }
+}
