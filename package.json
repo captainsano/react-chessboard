@@ -1,16 +1,18 @@
 {
   "name": "react-chessboard",
   "version": "0.0.1",
+  "private": true,
   "description": "Chessboard component for ReactJS",
   "main": "index.js",
   "scripts": {
+    "test": "node_modules/.bin/jest",
     "build": "export NODE_ENV=production && node_modules/.bin/browserify -t coffee-reactify -t [ envify --NODE_ENV production ] -g uglifyify src/chessboard.cjsx --standalone Chessboard > index.js",
     "watch": "export NODE_ENV=development && node_modules/.bin/watchify -t coffee-reactify -t [ envify --NODE_ENV development ] src/chessboard.cjsx --standalone Chessboard -o index.js --debug --verbose",
     "prepublish": "npm build"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/weekendlabs/react-chessboard"
+    "url": "git://github.com/santhosbaala/react-chessboard"
   },
   "keywords": [
     "chessboard",
@@ -21,7 +23,7 @@
   "author": "Santhos Baala RS <rssanthosbaala@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/weekendlabs/react-chessboard/issues"
+    "url": "https://github.com/santhosbaala/react-chessboard/issues"
   },
   "dependencies": {
     "react": "~0.13.0"
@@ -32,6 +34,13 @@
     "coffee-reactify": "~2.4.1",
     "uglifyify": "~3.0.1",
     "envify": "~3.3.1",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "jest-cli": "~0.4.0",
+    "coffee-react": "~2.4.1"
+  },
+  "jest": {
+    "scriptPreprocessor": "jest-preprocessor.js",
+    "testFileExtensions": ["coffee", "litcoffee", "cjsx", "js"],
+    "unmockedModulePathPatterns": ["node_modules/react"]
   }
 }
