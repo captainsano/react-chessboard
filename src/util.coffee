@@ -12,4 +12,7 @@ module.exports =
     # (Number, Any1, Any2) -> Any1/Any2
     @colorForSquareIndex: (index, light, dark) ->
       {file, rank} = @squareIndexToFileRank(index)
-      if ((file ^ rank) & 0b1) then light else dark
+      if ((file ^ rank) & 0b1)
+        color: 'light', value: light
+      else
+        color: 'dark', value: dark

@@ -19,10 +19,8 @@ module.exports =
     _getSquare: (i) ->
       squareIndex = 63 - i
       {file, rank} = Util.squareIndexToFileRank(squareIndex)
-      squareColor = Util.colorForSquareIndex(squareIndex, @props.lightSquareColor, @props.darkSquareColor)
+      {color: squareColorType, value: squareColor} = Util.colorForSquareIndex(squareIndex, @props.lightSquareColor, @props.darkSquareColor)
       squareSize = @props.size / 8
-
-      squareColorType = if @props.lightSquareColor is squareColor then 'light' else 'dark'
 
       <rect
         key={"square-#{squareIndex}"}

@@ -45,25 +45,25 @@ describe 'util', ->
         @color = util.colorForSquareIndex(0, lightColor, darkColor)
 
       it 'should return dark color', ->
-        expect(@color).toBe(darkColor)
+        expect(@color).toEqual(color: 'dark', value: darkColor)
 
     describe 'h1(7)', ->
       beforeEach ->
         @color = util.colorForSquareIndex(7, lightColor, darkColor)
 
       it 'should return light color', ->
-        expect(@color).toBe(lightColor)
+        expect(@color).toEqual(color: 'light', value: lightColor)
 
     describe 'a8(56)', ->
       beforeEach ->
         @color = util.colorForSquareIndex(56, lightColor, darkColor)
 
       it 'should return light color', ->
-        expect(@color).toBe(lightColor)
+        expect(@color).toEqual(color: 'light', value: lightColor)
 
     describe 'h8(63)', ->
       beforeEach ->
         @color = util.colorForSquareIndex(63, lightColor, darkColor)
 
       it 'should return dark color', ->
-        expect(@color).toBe(darkColor)
+        expect(@color).toEqual(color: 'dark', value: darkColor)
